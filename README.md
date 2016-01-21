@@ -13,6 +13,7 @@ Tested with OpenLDAP server and Windows Server 2013 Active Directory
 #### Configure Strategy
 
 The strategy requires a `verify` callback which accepts a user `profile` entry from the directory, and then calls the `done` callback supplying a `user`.
+If `domain` is supplied, the credentials to be used for binding to the LDAP server will have the `DOMAIN\userName` format. Otherwise, a DN will be used.
 
     var LdapStrategy = require('passport-ldapjs').Strategy;
 
@@ -20,6 +21,7 @@ The strategy requires a `verify` callback which accepts a user `profile` entry f
       server: {
         url: 'ldap://0.0.0.0:1389',
       },
+      domain: 'mydomain',
       base: 'OU=Users,OU=Company,DC=company,DC=com',
       search: {
         filter: '(sAMAccountName={{username}})',
