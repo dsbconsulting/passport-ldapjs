@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/slopez/passport-ldapjs",
   "dependencies": {
-    "ldapjs": "^0.7.1",
+    "ldapjs": "~1.0.0",
     "passport-strategy": "^1.0.0"
   }
 }
